@@ -13,7 +13,7 @@ window.STATE =
   "skillDir": "/home/user/nick-vels/skills/skills/autopilot",
   "baseCommit": "fe86036",
   "startedAt": "2026-11-22T21:19:06+00:00",
-  "updatedAt": "2026-11-22T21:22:31+00:00",
+  "updatedAt": "2026-11-22T21:24:10+00:00",
   "finishedAt": null,
   "stages": [
     {
@@ -48,12 +48,14 @@ window.STATE =
     },
     {
       "id": "build",
-      "status": "active",
-      "startedAt": "2026-11-22T21:22:31+00:00"
+      "status": "done",
+      "startedAt": "2026-11-22T21:22:31+00:00",
+      "finishedAt": "2026-11-22T21:24:10+00:00"
     },
     {
       "id": "review",
-      "status": "pending"
+      "status": "active",
+      "startedAt": "2026-11-22T21:24:10+00:00"
     },
     {
       "id": "final",
@@ -62,10 +64,10 @@ window.STATE =
   ],
   "requirements": {
     "total": 14,
-    "done": 0,
-    "inTicket": 14,
+    "done": 13,
+    "inTicket": 0,
     "inSpec": 0,
-    "placeholder": 0,
+    "placeholder": 1,
     "deferred": 0,
     "dropped": 0
   },
@@ -103,15 +105,30 @@ window.STATE =
       ],
       "review": "нет",
       "model": "обычная",
-      "status": "in-progress",
+      "status": "done",
       "retries": 0,
       "repairs": 0,
-      "startedAt": "2026-11-22T21:22:31+00:00"
+      "startedAt": "2026-11-22T21:22:31+00:00",
+      "finishedAt": "2026-11-22T21:24:10+00:00",
+      "tests": {
+        "passed": 28,
+        "failed": 0
+      },
+      "commit": "e5bafd9"
     }
   ],
-  "tests": null,
+  "tests": {
+    "passed": 28,
+    "failed": 0
+  },
   "debt": {
-    "placeholders": [],
+    "placeholders": [
+      "название сериала — [… — впиши] в index.html",
+      "сюжет (описание) — [… — впиши]",
+      "три героя: имена и фразы — [… — впиши]",
+      "трейлер — блок-заглушка, ролика нет",
+      "кнопка «Смотреть первую серию» — без ссылки"
+    ],
     "assumptions": [],
     "emptyEnv": []
   },
@@ -137,9 +154,10 @@ window.STATE =
     "2026-11-22T21:22:08+00:00",
     "2026-11-22T21:22:15+00:00",
     "2026-11-22T21:22:20+00:00",
-    "2026-11-22T21:22:31+00:00"
+    "2026-11-22T21:22:31+00:00",
+    "2026-11-22T21:24:10+00:00"
   ],
-  "rev": 19,
+  "rev": 22,
   "waiting": null,
   "waits": [
     {
@@ -253,78 +271,103 @@ window.STATE =
         "01"
       ],
       "act": "start"
+    },
+    {
+      "t": "2026-11-22T21:24:10+00:00",
+      "k": "ticket",
+      "ids": [
+        "01"
+      ],
+      "act": "done",
+      "tests": {
+        "passed": 28,
+        "failed": 0
+      }
+    },
+    {
+      "t": "2026-11-22T21:24:10+00:00",
+      "k": "add",
+      "key": "debt.placeholders",
+      "n": 5
+    },
+    {
+      "t": "2026-11-22T21:24:10+00:00",
+      "k": "stage",
+      "id": "review",
+      "act": "start"
     }
   ],
   "reqList": [
     {
       "id": "R01",
       "text": "«простой одностраничный сайт-лендинг для моего мини-сериала»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R02",
       "text": "«Идея сериала: [2–3 предложения о сюжете]»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R03",
       "text": "«На странице: название»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R04",
       "text": "«короткое описание»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R05",
       "text": "«3 героя»",
-      "status": "in-ticket"
+      "status": "placeholder",
+      "why": "имена и описания не переданы; «1 — заглушки»"
     },
     {
       "id": "R06",
       "text": "«трейлер-заглушка»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R07",
       "text": "«кнопка «Смотреть первую серию» (пока без ссылки)»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R08",
       "text": "«Без ключей, без оплаты, без внешних сервисов»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R09",
       "text": "«просто HTML-страница»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R10",
       "text": "«Готовый проект положи в папку projects/landing/»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R11",
       "text": "«сохрани в репозиторий (commit + push)»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R12",
       "text": "«В конце скажи, как открыть страницу»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R13",
       "text": "«Я новичок, объясняй простыми словами»",
-      "status": "in-ticket"
+      "status": "done"
     },
     {
       "id": "R14i",
       "text": "(подразумевается) страница нормально выглядит на телефоне",
-      "status": "in-ticket"
+      "status": "done"
     }
   ],
   "gates": {

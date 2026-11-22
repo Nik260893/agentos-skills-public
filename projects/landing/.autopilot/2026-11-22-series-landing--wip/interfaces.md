@@ -25,3 +25,6 @@
 - Запуск: открыть `index.html` в браузере (двойной щелчок).
 - **Команда проверки** (создаёт таск 01): `node tests/check.js` — открывает `index.html` в Chromium через Playwright (уже установлен в системе, `require('playwright')`, `chromium.launch()` без опций) на ширине 1280 и 375, проверяет критерии приёмки, печатает `N/M` и выходит с кодом 0 только если всё прошло. Отдельного запуска одного теста нет — файл один.
 - Не трогать: всё вне `projects/landing/`; файлы `.autopilot/`, `AGENTS.md`, `CLAUDE.md`, `.gitignore`.
+
+## Что построили таски
+- **01:** разделы `#hero` `#characters` `#trailer` `#watch`; `.character` ×3 (`.portrait` + имя + фраза); `.trailer-box` (aspect-ratio 16/9); кнопки `button[type=button][data-hint]` (`.cta`, `.play`) с `role="status"` в своей секции; заглушки `span.placeholder` вида `[… — впиши]`. Проверка — `node tests/check.js` (28 пунктов).
