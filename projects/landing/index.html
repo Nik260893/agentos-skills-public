@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[НАЗВАНИЕ СЕРИАЛА — впиши]</title>
+<style>
+  :root {
+    --bg: #0b0b10;
+    --panel: #16161f;
+    --text: #f1eee8;
+    --muted: #b9b4aa;
+    --accent: #ff4d3d;
+    --accent-hover: #ff7062;
+    --note: #ffd25e;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: auto; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  section { padding: 56px 20px; max-width: 1040px; margin: 0 auto; }
+  h1 { font-size: clamp(2.4rem, 8vw, 4.5rem); line-height: 1.1; margin: 0 0 20px; letter-spacing: 0.02em; overflow-wrap: anywhere; }
+  h2 { font-size: 1.8rem; margin: 0 0 24px; text-transform: uppercase; letter-spacing: 0.12em; }
+  p { margin: 0 0 16px; overflow-wrap: anywhere; }
+  #hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  #hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 40em; }
+  .placeholder { color: var(--note); font-style: italic; overflow-wrap: anywhere; }
+
+  .cta {
+    background: var(--accent);
+    color: #fff;
+    border: 0;
+    border-radius: 8px;
+    padding: 16px 28px;
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+  }
+  .cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+  button:focus-visible { outline: 3px solid var(--note); outline-offset: 3px; }
+  [role="status"] { min-height: 1.6em; margin: 12px 0 0; color: var(--muted); }
+
+  .cards { display: flex; gap: 20px; }
+  .character { flex: 1 1 0; min-width: 0; background: var(--panel); border-radius: 12px; padding: 24px; text-align: center; }
+  .portrait {
+    width: 112px; height: 112px; margin: 0 auto 16px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.6rem; font-weight: 700; color: #fff;
+  }
+  .character:nth-child(1) .portrait { background: #7a2e5c; }
+  .character:nth-child(2) .portrait { background: #2e5a7a; }
+  .character:nth-child(3) .portrait { background: #2e7a54; }
+  .character h3 { margin: 0 0 8px; font-size: 1.2rem; }
+
+  .trailer-box {
+    width: 100%; aspect-ratio: 16 / 9; background: #000; border: 1px solid #2a2a38; border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  }
+  .play {
+    width: 84px; height: 84px; border-radius: 50%; border: 0; background: var(--accent); color: #fff;
+    font-size: 2rem; cursor: pointer; padding: 0 0 0 6px; transition: background 0.15s;
+  }
+  .play:hover { background: var(--accent-hover); }
+  .caption { color: var(--muted); margin: 0; }
+
+  #watch { text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+  @media (max-width: 700px) {
+    .cards { flex-direction: column; }
+    section { padding: 40px 16px; }
+    #hero { min-height: 70vh; }
+  }
+</style>
+</head>
+<body>
+  <section id="hero">
+    <h1><span class="placeholder">[НАЗВАНИЕ СЕРИАЛА — впиши]</span></h1>
+    <p class="lead"><span class="placeholder">[ОПИСАНИЕ: 2–3 предложения о сюжете — впиши]</span></p>
+    <button type="button" class="cta" data-hint="Первая серия скоро">Смотреть первую серию</button>
+    <p role="status"></p>
+  </section>
+
+  <section id="characters">
+    <h2>Герои</h2>
+    <div class="cards">
+      <article class="character">
+        <div class="portrait" aria-hidden="true">?</div>
+        <h3><span class="placeholder">[ИМЯ ГЕРОЯ 1 — впиши]</span></h3>
+        <p><span class="placeholder">[ФРАЗА О ГЕРОЕ 1 — впиши]</span></p>
+      </article>
+      <article class="character">
+        <div class="portrait" aria-hidden="true">?</div>
+        <h3><span class="placeholder">[ИМЯ ГЕРОЯ 2 — впиши]</span></h3>
+        <p><span class="placeholder">[ФРАЗА О ГЕРОЕ 2 — впиши]</span></p>
+      </article>
+      <article class="character">
+        <div class="portrait" aria-hidden="true">?</div>
+        <h3><span class="placeholder">[ИМЯ ГЕРОЯ 3 — впиши]</span></h3>
+        <p><span class="placeholder">[ФРАЗА О ГЕРОЕ 3 — впиши]</span></p>
+      </article>
+    </div>
+  </section>
+
+  <section id="trailer">
+    <h2>Трейлер</h2>
+    <div class="trailer-box">
+      <button type="button" class="play" data-hint="Трейлер появится позже" aria-label="Смотреть трейлер">▶</button>
+      <p class="caption">Трейлер скоро</p>
+    </div>
+    <p role="status"></p>
+  </section>
+
+  <section id="watch">
+    <button type="button" class="cta" data-hint="Первая серия скоро">Смотреть первую серию</button>
+    <p role="status"></p>
+  </section>
+
+  <script>
+    // Кнопки ничего не открывают — только показывают подсказку рядом.
+    document.querySelectorAll('button[data-hint]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var area = button.closest('section').querySelector('[role="status"]');
+        if (area) area.textContent = button.getAttribute('data-hint');
+      });
+    });
+  </script>
+</body>
+</html>
