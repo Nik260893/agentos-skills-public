@@ -11,9 +11,9 @@ window.STATE =
   "memoryFile": "AGENTS.md",
   "memoryOwner": "autopilot",
   "skillDir": "/home/user/nick-vels/skills/skills/autopilot",
-  "baseCommit": null,
+  "baseCommit": "fe86036",
   "startedAt": "2026-11-22T21:19:06+00:00",
-  "updatedAt": "2026-11-22T21:22:15+00:00",
+  "updatedAt": "2026-11-22T21:22:31+00:00",
   "finishedAt": null,
   "stages": [
     {
@@ -42,12 +42,14 @@ window.STATE =
     },
     {
       "id": "plan",
-      "status": "active",
-      "startedAt": "2026-11-22T21:22:08+00:00"
+      "status": "done",
+      "startedAt": "2026-11-22T21:22:08+00:00",
+      "finishedAt": "2026-11-22T21:22:31+00:00"
     },
     {
       "id": "build",
-      "status": "pending"
+      "status": "active",
+      "startedAt": "2026-11-22T21:22:31+00:00"
     },
     {
       "id": "review",
@@ -101,9 +103,10 @@ window.STATE =
       ],
       "review": "нет",
       "model": "обычная",
-      "status": "pending",
+      "status": "in-progress",
       "retries": 0,
-      "repairs": 0
+      "repairs": 0,
+      "startedAt": "2026-11-22T21:22:31+00:00"
     }
   ],
   "tests": null,
@@ -132,9 +135,11 @@ window.STATE =
     "2026-11-22T21:21:09+00:00",
     "2026-11-22T21:21:50+00:00",
     "2026-11-22T21:22:08+00:00",
-    "2026-11-22T21:22:15+00:00"
+    "2026-11-22T21:22:15+00:00",
+    "2026-11-22T21:22:20+00:00",
+    "2026-11-22T21:22:31+00:00"
   ],
-  "rev": 16,
+  "rev": 19,
   "waiting": null,
   "waits": [
     {
@@ -234,6 +239,20 @@ window.STATE =
       "g": "G3",
       "ok": true,
       "problems": 0
+    },
+    {
+      "t": "2026-11-22T21:22:31+00:00",
+      "k": "stage",
+      "id": "build",
+      "act": "start"
+    },
+    {
+      "t": "2026-11-22T21:22:31+00:00",
+      "k": "ticket",
+      "ids": [
+        "01"
+      ],
+      "act": "start"
     }
   ],
   "reqList": [
