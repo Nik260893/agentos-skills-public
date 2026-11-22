@@ -13,7 +13,7 @@ window.STATE =
   "skillDir": "/home/user/nick-vels/skills/skills/autopilot",
   "baseCommit": "fe86036",
   "startedAt": "2026-11-22T21:19:06+00:00",
-  "updatedAt": "2026-11-22T21:25:21+00:00",
+  "updatedAt": "2026-11-22T21:26:34+00:00",
   "finishedAt": null,
   "stages": [
     {
@@ -134,14 +134,20 @@ window.STATE =
       ],
       "review": "да — ремонт ветки",
       "model": "сильная",
-      "status": "in-progress",
+      "status": "review",
       "retries": 0,
       "repairs": 0,
-      "startedAt": "2026-11-22T21:25:21+00:00"
+      "startedAt": "2026-11-22T21:25:21+00:00",
+      "finishedAt": "2026-11-22T21:26:34+00:00",
+      "tests": {
+        "passed": 29,
+        "failed": 0
+      },
+      "commit": "b469104"
     }
   ],
   "tests": {
-    "passed": 28,
+    "passed": 29,
     "failed": 0
   },
   "debt": {
@@ -165,7 +171,9 @@ window.STATE =
     "deferred": 0,
     "items": []
   },
-  "concerns": [],
+  "concerns": [
+    "index.html — с выключенным JavaScript вписанный текст остаётся жёлтым курсивом (видно всё, R09.1 соблюдено)"
+  ],
   "blind": null,
   "beats": [
     "2026-11-22T21:19:06+00:00",
@@ -179,9 +187,10 @@ window.STATE =
     "2026-11-22T21:22:20+00:00",
     "2026-11-22T21:22:31+00:00",
     "2026-11-22T21:24:10+00:00",
-    "2026-11-22T21:25:21+00:00"
+    "2026-11-22T21:25:21+00:00",
+    "2026-11-22T21:26:34+00:00"
   ],
-  "rev": 26,
+  "rev": 29,
   "waiting": null,
   "waits": [
     {
@@ -345,6 +354,32 @@ window.STATE =
         "F1"
       ],
       "act": "start"
+    },
+    {
+      "t": "2026-11-22T21:26:34+00:00",
+      "k": "ticket",
+      "ids": [
+        "F1"
+      ],
+      "act": "done",
+      "tests": {
+        "passed": 29,
+        "failed": 0
+      }
+    },
+    {
+      "t": "2026-11-22T21:26:34+00:00",
+      "k": "add",
+      "key": "concerns",
+      "n": 1
+    },
+    {
+      "t": "2026-11-22T21:26:34+00:00",
+      "k": "ticket",
+      "ids": [
+        "F1"
+      ],
+      "act": "review"
     }
   ],
   "reqList": [
