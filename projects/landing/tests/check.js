@@ -232,6 +232,32 @@ async function main() {
     assert(d.cards === 3 && d.ph >= 8 && d.btns >= 3, 'содержимое неполное');
   });
 
+  // Автор делает как в README: находит «впиши» и заменяет заглушку в квадратных скобках своим текстом.
+  await check('после замены заглушек по README текст выглядит обычным, не заглушкой', async () => {
+    let n = 0;
+    const edited = src.replace(/\[[^\[\]<]*впиши\]/g, () => `Мой текст ${++n}`);
+    assert(n >= 8, 'в index.html меньше восьми заглушек [… — впиши]: ' + n);
+    const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+    await context.route('**/*', (r) => r.abort());
+    const page = await context.newPage();
+    await page.setContent(edited);
+    const d = await page.evaluate(() => {
+      const note = 'rgb(255, 210, 94)'; // цвет заглушки (--note)
+      const els = [...document.body.querySelectorAll('*')].filter((e) =>
+        [...e.childNodes].some((c) => c.nodeType === 3 && /Мой текст \d/.test(c.textContent)));
+      return {
+        count: els.length,
+        bad: els.filter((e) => {
+          const cs = getComputedStyle(e);
+          return e.closest('.placeholder') || cs.fontStyle === 'italic' || cs.color === note;
+        }).map((e) => e.textContent.trim()),
+      };
+    });
+    await context.close();
+    assert(d.count >= 8, 'не найден вписанный текст: ' + d.count);
+    assert(d.bad.length === 0, 'выглядит как заглушка: ' + d.bad.slice(0, 3).join(', '));
+  });
+
   await browser.close();
   report();
 }

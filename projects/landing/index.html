@@ -123,6 +123,11 @@
   </section>
 
   <script>
+    // Заглушку, в которую уже вписан свой текст (нет слова «впиши»), показываем как обычный текст.
+    document.querySelectorAll('.placeholder').forEach(function (el) {
+      if (el.textContent.indexOf('впиши') === -1) el.classList.remove('placeholder');
+    });
+
     // Кнопки ничего не открывают — только показывают подсказку рядом.
     document.querySelectorAll('button[data-hint]').forEach(function (button) {
       button.addEventListener('click', function () {
